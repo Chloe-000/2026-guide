@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>「ゴーグルってなにを買えばいいの？」｜SkiFan</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/artcle.css" />
+    <link rel="stylesheet" href="css/style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+  </head>
+  <script src="js/menu.js"></script>
+  <body>
+    <!-- ============================================================
+     ヘッダー（トップページと全く同じ構造。共通パーツとして扱う）
+     ============================================================ -->
+<header class="header">
+  <!-- サイトロゴ。トップページへのリンクを兼ねる -->
+  <a href="index.html" class="logo">
+    Ski<span>Fan</span>
+  </a>
+
+  <!-- ①これは残す：開閉を判定するチェックボックス -->
+  <input type="checkbox" id="menuCheck" class="menu-check" />
+
+  <!-- ②これも残す：ハンバーガーアイコン -->
+  <label for="menuCheck" class="menu-toggle" aria-label="メニューを開く">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <!-- ③これも残す：メニュー全体を覆うオーバーレイ -->
+  <div class="menu-overlay">
+    <label for="menuCheck" class="menu-close" aria-label="メニューを閉じる">×</label>
+    <div class="menu-logo">
+      Ski
+      <span>Fan</span>
+    </div>
+
+    <!-- ④ここだけ変更：labelで包むのをやめて、普通のaに戻す -->
+    <nav class="menu-nav">
+      <a href="index.html#qa">基本知識QA</a>
+      <a href="index.html#apps">おすすめアプリ</a>
+      <a href="index.html#more">もっと詳しく！</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+    <!-- /header -->
+
+    <!-- ============================================================
+     記事本体
+     見出し → ヒーロー画像 → リード文 → 本文 → キャラクターの
+     ワンポイントアドバイス（吹き出し）という縦一直線の構成
+     ============================================================ -->
+    <main class="article">
+      <!-- 記事タイトル -->
+      <h1 class="article-title">基礎知識QA 「ゴーグルってどれを買えばいいの？」</h1>
+
+      <!-- 記事のメイン画像。figureで画像を意味的にひとまとまりにしている -->
+      <figure class="article-hero">
+        <img src="img/samune1.png" alt="" />
+      </figure>
+
+      <!-- 導入文（リード文）。本文より少し強調したいので専用クラスを付与 -->
+      <p class="article-lead">
+        ネット通販などで売っている激安ゴーグルは安くてお手軽です
+        <br />
+        しかし、初心者にこそいいゴーグルを！
+      </p>
+
+      <!-- 本文 -->
+      <p class="article-body">
+        ゴーグルには 雪目と言われる目の日焼けや、天候による視界不良、 転倒時の目の保護など、の役割があります。
+        そのためゴーグルの性能は安全に直結します。また、メガネユーザーの方はメガネ対応の大きめのゴーグルも販売されているのでチェックしてみてください！
+        有名ブランド（Oakley等）
+      </p>
+
+      <!-- ------------------------------------------------------------
+       ワンポイントアドバイス（キャラクター＋吹き出し）
+       左にキャラ画像、右に吹き出しテキストを横並びで配置
+       ------------------------------------------------------------ -->
+      <div class="article-tip">
+        <!-- キャラクターアイコン画像。widthとheightをHTML側にも指定しておくと、
+         CSSが読み込まれる前の一瞬でも画像が原寸大で表示されるのを防げる -->
+        <img class="tip-avatar" src="img/sasie3.png" alt="キャラクター" width="100" height="100" />
+
+        <!-- 吹き出し本体。左向きの三角形はCSSの::beforeで作る想定 -->
+        <div class="tip-bubble">
+          自分の買える範囲でいいものを買おう！不安があれば専門店の店員さんに相談しよう！デモ文章です
+        </div>
+      </div>
+      <!-- /article-tip -->
+    </main>
+    <!-- /article -->
+
+    <!-- ============================================================
+     フッター（トップページと共通構造）
+     ============================================================ -->
+    <footer class="footer">
+      <div class="footer-logo">
+        Ski
+        <span>Fan</span>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="index.html#qa">基本知識QA</a>
+        <a href="index.html#apps">おすすめのアプリ</a>
+        <a href="index.html#more">もっと詳しく！</a>
+      </nav>
+
+      <div class="footer-bottom">
+        <a href="#">サイトマップ</a>
+        <a href="#">プライバシーポリシー</a>
+      </div>
+    </footer>
+    <!-- /footer -->
+  </body>
+</html>
