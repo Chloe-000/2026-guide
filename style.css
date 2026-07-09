@@ -1,0 +1,260 @@
+/* ==========================================================
+   home.css
+   トップページ専用スタイル
+   （common.cssを読み込んだ上でこのファイルが追加で読み込まれる）
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   ヒーローセクション
+   ---------------------------------------------------------- */
+.hero {
+  /* 画像自体はwidth:100%で画面幅いっぱいにするが、
+     セクション自体にmax-widthをかけて中央寄せにすることで
+     他のセクション（qa-grid等）と横位置を揃えている */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-img {
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  object-fit: contain;
+  border-radius: 0 0 60px 60px;
+}
+
+/* ----------------------------------------------------------
+   キャッチコピーセクション
+   ---------------------------------------------------------- */
+.catch {
+  text-align: center;
+  padding: var(--section-space) 20px;
+}
+
+.catch h1 {
+  color: var(--color-pink);
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.catch .lead {
+  color: var(--color-pink);
+  font-size: 15px;
+  /* PCで横幅いっぱいに文字が伸びると読みにくいので、
+     読みやすい行の長さ（だいたい30〜40文字分）に上限をつけて中央寄せにする */
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ----------------------------------------------------------
+   セクション間の区切り線（ピンクの1本線）
+   ---------------------------------------------------------- */
+.divider {
+  border: none; /* デフォルトの立体的な線を消す */
+  border-top: 2px solid var(--color-pink);
+  /* 他のセクションと同じ最大幅・中央寄せにして、線の長さを揃える */
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ----------------------------------------------------------
+   セクション共通の見出しブロック
+   （「基礎知識QA」「おすすめのアプリ」で共通のスタイル）
+   ---------------------------------------------------------- */
+.section-heading {
+  text-align: center;
+  padding: var(--section-space) 20px 30px;
+}
+
+.section-heading h2 {
+  color: var(--color-pink);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: var(--color-pink);
+  font-size: 13px;
+}
+
+/* ----------------------------------------------------------
+   基礎知識QA：カードグリッド（PCは2列）
+   ---------------------------------------------------------- */
+.qa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 均等幅の2列 */
+  gap: 40px 30px; /* 縦40px・横30pxの間隔 */
+  max-width: var(--max-width);
+  margin: 0 auto; /* 中央寄せ */
+  padding: 0 20px var(--section-space);
+}
+
+/* サムネイル画像。正方形にトリミングして表示を揃える */
+.qa-thumb img {
+  width: 100%;
+  aspect-ratio: 8 / 5; /* 縦横比を1:1に固定（正方形） */
+  object-fit: contain;
+  background: #d9ecef; /* 画像読み込み前のプレースホルダー色 */
+}
+
+/* 元デザインではタイトル・説明文とも中央揃えではなく、
+   画像の左端にそろえて左揃えで配置されているのでここで指定する */
+.qa-card {
+  text-align: left;
+}
+
+.qa-card h3 {
+  color: var(--color-pink);
+  font-size: 16px;
+  margin: 16px 0 8px;
+  line-height: 1.5;
+}
+
+.qa-card p {
+  font-size: 13px;
+  color: #333;
+}
+
+/* ----------------------------------------------------------
+   おすすめのアプリ：カードグリッド（PCは3列）
+   ---------------------------------------------------------- */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 均等幅の3列を繰り返す */
+  gap: 30px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px var(--section-space);
+}
+
+/* アプリカードもQAカードと同様に左揃えにする */
+.app-card {
+  text-align: left;
+}
+
+.app-thumb img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.app-rating {
+  color: var(--color-pink);
+  margin: 12px 0 8px;
+  letter-spacing: 2px; /* ■同士の間隔を少し空ける */
+}
+
+.app-card p {
+  font-size: 13px;
+  color: #333;
+}
+
+/* ----------------------------------------------------------
+   バナー「雪の上は自由、たぶん」
+   左に見出し、右下にリンク一覧という非対称レイアウト
+   ---------------------------------------------------------- */
+.banner {
+  background: var(--color-bg-pale);
+  margin: var(--section-space) auto;
+  max-width: 1100px;
+  padding: 50px 30px;
+}
+
+.banner-inner {
+  display: flex;
+  flex-wrap: wrap; /* 幅が足りない時は自動で折り返す（＝スマホ対応） */
+  justify-content: space-between;
+  align-items: flex-end; /* 下端をそろえる（画像のように見出しは上、リンクは下寄せ） */
+  gap: 30px;
+}
+
+.banner h2 {
+  color: var(--color-blue);
+  font-size: 24px;
+}
+
+.banner-links-title {
+  color: var(--color-blue);
+  font-size: 13px;
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+.banner-links ul li {
+  text-align: right;
+  margin-bottom: 6px;
+}
+
+.banner-links a {
+  color: var(--color-blue);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* 「を見る」の部分だけ少し弱めた見た目にする */
+.banner-links a span {
+  font-weight: normal;
+  font-size: 11px;
+}
+
+/* ----------------------------------------------------------
+   装飾的な区切りマーク（＼■■■■■■／）
+   ---------------------------------------------------------- */
+.section-divider {
+  text-align: center;
+  color: var(--color-pink);
+  padding: 40px 0;
+  letter-spacing: 4px;
+}
+
+/* ＼／の矢印部分だけ少し大きめ＆水色にして、間の■と差をつける */
+.section-divider .arrow {
+  color: var(--color-blue);
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+/* ----------------------------------------------------------
+   下部のCTA画像バナー
+   ---------------------------------------------------------- */
+.cta-image img {
+  width: 100%;
+  background: #d9ecef; /* 画像未設置時のプレースホルダー */
+}
+
+/* ==========================================================
+   レスポンシブ対応（スマホ幅）
+   767px以下の画面ではここに書いたスタイルで上書きされる
+   ========================================================== */
+@media (max-width: 480px) {
+  .apps-grid {
+    gap: 12px; /* 3列を維持したまま、隙間だけ詰めて余裕を作る */
+  }
+  /* バナーは横並び→縦並びにして、文字も中央寄せに変更する */
+  .banner-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner-links-title,
+  .banner-links ul li {
+    text-align: center;
+  }
+
+  .catch h1 {
+    font-size: 22px;
+  }
+
+  /* スマホ幅の元デザインではQA・アプリカードの文字が中央揃えに見えるため、
+     PCでの左揃え指定をここで中央揃えに上書きする */
+  .qa-card,
+  .app-card {
+    text-align: center;
+  }
+
+  /* 画面が狭くなった分、ヒーロー画像の角丸も少し控えめにする */
+  .hero-img {
+    aspect-ratio: 4 / 3; /* スマホでは横長すぎると人物が小さくなるので、少し縦長寄りの比率に切り替える */
+    border-radius: 0 0 30px 30px;
+  }
+}
