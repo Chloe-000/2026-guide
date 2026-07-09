@@ -31,7 +31,7 @@
 body {
   font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
   color: #333;
-  line-height: 1.7; /* 日本語は行間を広めにすると読みやすい */
+  line-height: 1.7; /* 行間 */
 }
 
 a {
@@ -55,13 +55,19 @@ ul {
   display: flex; /* ロゴとメニューアイコンを横並びにする */
   align-items: center; /* 縦方向は中央揃え */
   justify-content: space-between; /* 左右の端に振り分ける */
-  padding: 20px;
+  padding: 25px;
   position: relative; /* メニューアイコン(.menu-toggle)を絶対配置する際の基準にする場合に備えて */
 }
 
 .logo {
+  .dela-gothic-one-regular {
+    font-family: "Dela Gothic One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
   font-weight: bold;
-  font-size: 24px;
+  font-size: 30px;
   color: var(--color-pink);
 }
 
@@ -71,18 +77,8 @@ ul {
 }
 
 /* ==========================================================
-   ハンバーガーメニュー（CSSのみで開閉：チェックボックスハック）
-   ==========================================================
-   仕組みのおさらい：
-   1. <input type="checkbox" id="menuCheck"> を隠して用意
-   2. アイコンも閉じるボタンも <label for="menuCheck"> にしてあるので
-      クリックするとチェックボックスのON/OFFが切り替わる（JS不要）
-   3. 下記の「#menuCheck:checked ~ .menu-overlay」というセレクタで
-      「チェックが入っている時だけ、後ろにある.menu-overlayを表示する」
-      という指定をしている（～は「同じ階層より後にある要素」を選ぶ記号）
-   ========================================================== */
+   ハンバーガーメニュー*/
 
-/* チェックボックス自体は画面に見せたくないので非表示にする */
 .menu-check {
   display: none;
 }
@@ -152,9 +148,15 @@ ul {
   text-align: center;
 }
 
+/*
+  a を label で包む構造に変更したため、
+  文字色や太さの指定は label 側につける。
+  （label自体はブロック要素ではないのでcursor:pointerもここで指定しておくと親切）
+*/
 .menu-nav a {
   color: var(--color-blue);
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* ==========================================================
