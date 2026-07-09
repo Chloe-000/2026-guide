@@ -11,18 +11,15 @@
   /* 画像自体はwidth:100%で画面幅いっぱいにするが、
      セクション自体にmax-widthをかけて中央寄せにすることで
      他のセクション（qa-grid等）と横位置を揃えている */
-  max-width: var(--max-width);
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .hero-img {
   width: 100%;
-  /* 元画像の縦横比のまま表示すると縦長になりすぎるため、
-     横長の比率（21:9）に固定してトリミング表示する。
-     object-fit: coverではみ出た部分は自動でカットされる */
-  aspect-ratio: 21 / 9;
-  object-fit: cover;
+  aspect-ratio: 8 / 5;
+  object-fit: contain;
   border-radius: 0 0 60px 60px;
 }
 
@@ -95,8 +92,8 @@
 /* サムネイル画像。正方形にトリミングして表示を揃える */
 .qa-thumb img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* 縦横比を1:1に固定（正方形） */
-  object-fit: cover; /* はみ出た部分は切り取って隙間なく敷き詰める */
+  aspect-ratio: 8 / 5; /* 縦横比を1:1に固定（正方形） */
+  object-fit: contain;
   background: #d9ecef; /* 画像読み込み前のプレースホルダー色 */
 }
 
@@ -139,7 +136,6 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  background: #d9ecef;
 }
 
 .app-rating {
@@ -230,12 +226,10 @@
    レスポンシブ対応（スマホ幅）
    767px以下の画面ではここに書いたスタイルで上書きされる
    ========================================================== */
-@media (max-width: 767px) {
-  /* おすすめのアプリは3列→1列（縦積み）にする */
+@media (max-width: 480px) {
   .apps-grid {
-    grid-template-columns: 1fr;
+    gap: 12px; /* 3列を維持したまま、隙間だけ詰めて余裕を作る */
   }
-
   /* バナーは横並び→縦並びにして、文字も中央寄せに変更する */
   .banner-inner {
     flex-direction: column;
