@@ -1,29 +1,14 @@
-/* ==========================================================
-   common.css
-   全ページ共通のスタイル
-   （リセット・配色変数・ヘッダー／フッター／メニュー）
-   ========================================================== */
-
-/* ----------------------------------------------------------
-   CSS変数（カスタムプロパティ）
-   色やフォントなど、サイト全体で使い回す値をここにまとめておくと
-   後から一括で変更しやすくなる
-   ---------------------------------------------------------- */
 :root {
   --color-pink: #ec1c78; /* ロゴやキャッチコピーに使うピンク */
   --color-blue: #29abe2; /* "Fan"の文字やアクセントに使う水色 */
   --color-bg-light: #f2f2f2; /* フッターなどの薄いグレー背景 */
   --color-bg-pale: #cfe6ea; /* バナー背景などの薄い水色 */
   --max-width: 1000px; /* PC版でコンテンツが横に伸びすぎないようにする最大幅 */
-  --section-space: 80px; /* セクションとセクションの間の基本の余白（縦のリズムを揃えるための共通値） */
+  --section-space: 80px; /* セクションとセクションの間の基本の余白 */
 }
 
-/* ----------------------------------------------------------
-   ざっくりリセット
-   ブラウザ標準の余白や下線を消して、自分でゼロから組み立てやすくする
-   ---------------------------------------------------------- */
 * {
-  box-sizing: border-box; /* paddingやborderを幅に含めて計算する（サイズ計算が楽になる） */
+  box-sizing: border-box; 
   margin: 0;
   padding: 0;
 }
@@ -36,12 +21,12 @@ body {
 
 a {
   text-decoration: none; /* 下線を消す */
-  color: inherit; /* 親要素の文字色を引き継ぐ（リンクだけ青くならないように） */
+  color: inherit; /* 親要素の文字色を引き継ぐ */
 }
 
 img {
-  max-width: 100%; /* 親要素からはみ出さないようにする（レスポンシブの基本） */
-  display: block; /* 画像下にできる謎の隙間を消す */
+  max-width: 100%; /* 親要素からはみ出さないようにする */
+  display: block;
 }
 
 ul {
@@ -56,7 +41,7 @@ ul {
   align-items: center; /* 縦方向は中央揃え */
   justify-content: space-between; /* 左右の端に振り分ける */
   padding: 25px;
-  position: relative; /* メニューアイコン(.menu-toggle)を絶対配置する際の基準にする場合に備えて */
+  position: relative; 
 }
 
 .logo {
@@ -105,17 +90,14 @@ ul {
 .menu-overlay {
   display: none; /* 通常時は非表示にしておく */
   position: fixed; /* 画面に対して固定し、スクロールしても位置が動かないようにする */
-  inset: 0; /* top:0; right:0; bottom:0; left:0; と同じ意味（画面全体を覆う） */
+  inset: 0; /* 
   background: var(--color-bg-light);
   flex-direction: column;
   align-items: center;
   padding-top: 60px;
-  z-index: 100; /* 他の要素より手前に表示されるよう重ね順を上げる */
+  z-index: 100; 
 }
 
-/* ★ここがCSSのみメニューの心臓部★
-   チェックボックス(#menuCheck)がチェックされている時だけ、
-   すぐ後ろにある.menu-overlayのdisplayをflexにして表示する */
 #menuCheck:checked ~ .menu-overlay {
   display: flex;
 }
@@ -148,11 +130,6 @@ ul {
   text-align: center;
 }
 
-/*
-  a を label で包む構造に変更したため、
-  文字色や太さの指定は label 側につける。
-  （label自体はブロック要素ではないのでcursor:pointerもここで指定しておくと親切）
-*/
 .menu-nav a {
   color: var(--color-blue);
   font-weight: bold;
