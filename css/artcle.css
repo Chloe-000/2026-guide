@@ -1,0 +1,69 @@
+/* ==========================================================
+   artcle.css
+   記事詳細ページ専用スタイル
+   ========================================================== */
+
+.article {
+  padding: 30px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.article-title {
+  color: var(--color-pink);
+  font-size: 20px;
+  text-align: start;
+  margin-bottom: 30px;
+}
+
+/* 記事メイン画像も他のカードと統一感を持たせて角丸＋影をつける */
+.article-hero img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: scale-down;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.article-lead,
+.article-body {
+  color: var(--color-pink);
+  text-align: start;
+  font-size: 14px;
+  margin: 30px 0;
+}
+
+.article-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 50px 0;
+}
+
+.article-tip .tip-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tip-bubble {
+  position: relative;
+  background: #fff;
+  border: 2px solid var(--color-pink);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 13px;
+  color: var(--color-pink);
+}
+
+.tip-bubble::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  border-width: 8px 10px 8px 0;
+  border-style: solid;
+  border-color: transparent var(--color-pink) transparent transparent;
+}

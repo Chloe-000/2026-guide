@@ -1,0 +1,360 @@
+/* ==========================================================
+   home.css（style.css）
+   トップページ専用スタイル
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   ヒーローセクション
+   ---------------------------------------------------------- */
+.hero {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  /* 画像上部にある文字が切り取られないよう、上端を優先して残す */
+  object-position: top;
+  border-radius: 0 0 60px 60px;
+}
+
+/* ----------------------------------------------------------
+   キャッチコピーセクション
+   ---------------------------------------------------------- */
+.catch {
+  text-align: center;
+  padding: var(--section-space) 20px;
+}
+
+.catch h1 {
+  color: var(--color-pink);
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.catch .lead {
+  color: var(--color-pink);
+  font-size: 15px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ----------------------------------------------------------
+   セクション間の区切り線
+   ---------------------------------------------------------- */
+.divider {
+  border: none;
+  border-top: 2px solid var(--color-pink);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ----------------------------------------------------------
+   セクション共通の見出しブロック
+   ---------------------------------------------------------- */
+.section-heading {
+  text-align: center;
+  padding: var(--section-space) 20px 30px;
+}
+
+.section-heading h2 {
+  color: var(--color-pink);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: var(--color-pink);
+  font-size: 13px;
+}
+
+/* ----------------------------------------------------------
+   基礎知識QA：カード型UI（PCは2列）
+   ---------------------------------------------------------- */
+.qa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px var(--section-space);
+}
+
+/* QAカード本体：白背景＋角丸＋影で「カード」として独立させる */
+.qa-card {
+  text-align: left;
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden; /* サムネイル画像の角を、カードの角丸に合わせて一緒に切り抜く */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.qa-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.qa-thumb img {
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  object-fit: contain;
+  background: #d9ecef;
+}
+
+.qa-card h3 {
+  color: var(--color-pink);
+  font-size: 16px;
+  margin: 16px 16px 8px;
+  line-height: 1.5;
+}
+
+.qa-card p {
+  font-size: 13px;
+  color: #333;
+  padding: 0 16px 16px;
+}
+
+/* ----------------------------------------------------------
+   おすすめのアプリ：カード型UI（PCは3列）
+   ---------------------------------------------------------- */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px var(--section-space);
+}
+
+.app-card {
+  text-align: center;
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 28px 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.app-thumb img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.app-rating {
+  color: var(--color-pink);
+  margin: 12px 0 8px;
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.app-card p {
+  font-size: 13px;
+  color: #333;
+}
+
+/* ----------------------------------------------------------
+   バナー「雪の上は自由、たぶん」
+   ---------------------------------------------------------- */
+.banner {
+  background: var(--color-bg-pale);
+  margin: var(--section-space) auto;
+  max-width: 1100px;
+  padding: 50px 30px;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.banner-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.banner h2 {
+  color: var(--color-blue);
+  font-size: 24px;
+}
+
+.banner-links-title {
+  color: var(--color-blue);
+  font-size: 13px;
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+.banner-links ul li {
+  text-align: right;
+  margin-bottom: 6px;
+}
+
+.banner-links a {
+  color: var(--color-blue);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.banner-links a span {
+  font-weight: normal;
+  font-size: 11px;
+}
+
+/* ----------------------------------------------------------
+   装飾的な区切りマーク
+   ---------------------------------------------------------- */
+.section-divider {
+  text-align: center;
+  color: var(--color-pink);
+  padding: 40px 0;
+  letter-spacing: 4px;
+}
+
+.section-divider .arrow {
+  color: var(--color-blue);
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+/* ----------------------------------------------------------
+   下部のCTA画像バナー
+   ---------------------------------------------------------- */
+.cta-image img {
+  width: 100%;
+  background: #d9ecef;
+}
+
+/* ==========================================================
+   SNS共有ボタン
+   ========================================================== */
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0 20px var(--section-space);
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.share-btn:hover {
+  opacity: 0.8;
+}
+
+.share-x {
+  background: #000;
+  color: #fff;
+}
+
+.share-line {
+  background: #06c755;
+  color: #fff;
+}
+
+.share-copy {
+  background: var(--color-bg-pale);
+  color: var(--color-blue);
+}
+
+.share-copy.is-copied {
+  background: var(--color-pink);
+  color: #fff;
+}
+
+/* ==========================================================
+   レスポンシブ対応（スマホ幅）
+   ========================================================== */
+@media (max-width: 480px) {
+  .apps-grid {
+    gap: 20px; /* カードに影があるので、詰めすぎない余白に調整 */
+  }
+
+  .banner-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner-links-title,
+  .banner-links ul li {
+    text-align: center;
+  }
+
+  .catch h1 {
+    font-size: 22px;
+  }
+
+  .qa-card {
+    text-align: center;
+  }
+
+  .hero-img {
+    aspect-ratio: 4 / 3;
+    border-radius: 0 0 30px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .catch h1 {
+    font-size: 20px;
+  }
+
+  .catch .lead {
+    font-size: 13px;
+  }
+
+  .section-heading h2 {
+    font-size: 18px;
+  }
+
+  .section-heading p {
+    font-size: 12px;
+  }
+
+  .qa-card h3 {
+    font-size: 14px;
+  }
+
+  .qa-card p,
+  .app-card p {
+    font-size: 12px;
+  }
+
+  .banner h2 {
+    font-size: 20px;
+  }
+
+  .apps-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Apple公式バッジのインライン指定サイズを上書き（詳細はコメント参照） */
+  .app-card > a {
+    width: 120px !important;
+    height: 120px !important;
+  }
+}

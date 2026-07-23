@@ -3,66 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ski Fan｜スキー初心者向け情報サイト</title>
+    <title>SkiFan｜スキー初心者向け情報サイト</title>
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet" />
   </head>
-  <script src="js/menu.js"></script>
   <body>
-    <!-- ============================================================
-     ヘッダー
-     ロゴ（左）とハンバーガーメニューのアイコン（右）を横並びに配置
-     ============================================================ -->
     <header class="header">
-      <!-- サイトロゴ。トップページへのリンクを兼ねる -->
       <a href="index.html" class="logo">
         Ski
         <span>Fan</span>
       </a>
 
-      <!-- ①これは残す：開閉を判定するチェックボックス -->
       <input type="checkbox" id="menuCheck" class="menu-check" />
 
-      <!-- ②これも残す：ハンバーガーアイコン -->
       <label for="menuCheck" class="menu-toggle" aria-label="メニューを開く">
         <span></span>
         <span></span>
         <span></span>
       </label>
 
-      <!-- ③これも残す：メニュー全体を覆うオーバーレイ -->
       <div class="menu-overlay">
         <label for="menuCheck" class="menu-close" aria-label="メニューを閉じる">×</label>
         <div class="menu-logo">
           Ski
           <span>Fan</span>
         </div>
-
-        <!-- ④ここだけ変更：labelで包むのをやめて、普通のaに戻す -->
         <nav class="menu-nav">
-          <a href="index.html#qa">基本知識QA</a>
-          <a href="index.html#apps">おすすめアプリ</a>
-          <a href="index.html#more">もっと詳しく！</a>
+          <a href="#qa">基本知識QA</a>
+          <a href="#apps">おすすめアプリ</a>
+          <a href="#more">もっと詳しく！</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <!-- ------------------------------------------------------------
-       ヒーローセクション
-       スキーヤーのイラスト1枚を大きく表示するだけのシンプルな構成
-       ------------------------------------------------------------ -->
       <section class="hero">
         <img src="img/Top1.png" alt="スキーで滑走するイラスト" class="hero-img" />
       </section>
 
-      <!-- ------------------------------------------------------------
-       キャッチコピーセクション
-       見出し(h1)＋リード文
-       ------------------------------------------------------------ -->
       <section class="catch">
         <h1>「スピードを体感したい？」</h1>
         <p class="lead">
@@ -74,15 +55,9 @@
         </p>
       </section>
 
-      <!-- セクション間の区切り線（ピンクの1本線） -->
       <hr class="divider" />
 
-      <!-- ------------------------------------------------------------
-       基礎知識QAセクション
-       見出しブロック＋カード4枚（2列×2行のグリッド）
-       ------------------------------------------------------------ -->
       <section class="qa" id="qa">
-        <!-- セクション共通の見出しブロック（タイトル＋説明文） -->
         <div class="section-heading">
           <h2>基礎知識QA</h2>
           <p>
@@ -92,55 +67,43 @@
           </p>
         </div>
 
-        <!-- QAカードを並べるグリッド。CSS側で2列に指定している -->
         <div class="qa-grid">
-          <!-- ▼QAカード1枚分のセット。同じ構造を4回繰り返している -->
           <article class="qa-card">
-            <!-- サムネイル画像。クリックで記事詳細ページへ遷移 -->
             <a href="article.html" class="qa-thumb">
-              <img src="img/samune1.png" alt="" />
+              <img src="img/samune2.png" alt="「スキー一式って買うべき？」" />
             </a>
-            <!-- 記事タイトル（h3）もリンクにする -->
-            <h3><a href="article.html">「ゴーグルってどれを選べばいいの？」</a></h3>
-            <!-- 記事の要約文 -->
+            <h3 class="sr-only"><a href="article.html">「スキー一式って買うべき？」</a></h3>
+            <p>スキー板、スキーブーツは買うべき？</p>
+          </article>
+
+          <article class="qa-card">
+            <a href="article2.html" class="qa-thumb">
+              <img src="img/samune1.png" alt="ゴーグルってどれを選べばいいの？" />
+            </a>
+            <h3 class="sr-only"><a href="article2.html">「ゴーグルってどれを選べばいいの？」</a></h3>
             <p>通販で売ってる安いゴーグルと店舗で売ってるゴーグルの差って何？</p>
           </article>
 
           <article class="qa-card">
-            <a href="article.html" class="qa-thumb">
-              <img src="images/qa-thumb-2.png" alt="" />
+            <a href="article3.html" class="qa-thumb">
+              <img src="img/samune3.png" alt="Tips 持ち物事情" />
             </a>
-            <h3><a href="article.html">「ゴーグルってなにを買えばいいの？」</a></h3>
-            <p>通販で売ってる安いゴーグルと店舗で売ってるゴーグルの差って何？</p>
+            <h3 class="sr-only"><a href="article3.html">Tips 持ち物事情</a></h3>
+            <p>いつも自分が持っていってる持ち物の紹介</p>
           </article>
 
           <article class="qa-card">
-            <a href="article.html" class="qa-thumb">
-              <img src="images/qa-thumb-3.png" alt="" />
+            <a href="article4.html" class="qa-thumb">
+              <img src="img/samune4.png" alt="Tips 中に着るもの" />
             </a>
-            <h3><a href="article.html">「ゴーグルってなにを買えばいいの？」</a></h3>
-            <p>通販で売ってる安いゴーグルと店舗で売ってるゴーグルの差って何？</p>
+            <h3 class="sr-only"><a href="article4.html">Tips 中に着るもの</a></h3>
+            <p>意外とスノーウエアの中って何を着ればいいか迷います</p>
           </article>
-
-          <article class="qa-card">
-            <a href="article.html" class="qa-thumb">
-              <img src="images/qa-thumb-4.png" alt="" />
-            </a>
-            <h3><a href="article.html">「ゴーグルってなにを買えばいいの？」</a></h3>
-            <p>通販で売ってる安いゴーグルと店舗で売ってるゴーグルの差って何？</p>
-          </article>
-          <!-- ▲QAカードここまで -->
         </div>
-        <!-- /qa-grid -->
       </section>
-      <!-- /qa -->
 
       <hr class="divider" />
 
-      <!-- ------------------------------------------------------------
-       おすすめのアプリセクション
-       見出しブロック＋カード3枚（横並び3列）
-       ------------------------------------------------------------ -->
       <section class="apps" id="apps">
         <div class="section-heading">
           <h2>おすすめのアプリ</h2>
@@ -152,7 +115,6 @@
         </div>
 
         <div class="apps-grid">
-          <!-- ▼アプリカード1枚分。同じ構造を3回繰り返している -->
           <article class="app-card">
             <a
               href="https://apps.apple.com/jp/app/%E6%8E%A2%E3%81%99/id1514844621?itscg=30200&itsct=apps_box_artwork&mttnsubad=1514844621"
@@ -163,46 +125,14 @@
                 overflow: hidden;
                 display: inline-block;
                 vertical-align: middle;
-                --app-icon-mask: url(&quot;data:image/svg+xml,%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xml%3Aspace%3D%22preserve%22%20viewBox%3D%220%200%20230.5%20230.5%22%3E%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.4%22%20clip-rule%3D%22evenodd%22%20d%3D%22M158.2%20230H64.1a320%20320%200%200%201-7-.1c-5%200-10-.5-15-1.3a50.8%2050.8%200%200%201-14.4-4.8%2048.2%2048.2%200%200%201-21-21%2050.9%2050.9%200%200%201-4.8-14.4%20100.7%20100.7%200%200%201-1.3-15v-7l-.1-8.2V64.1a320%20320%200%200%201%20.1-7c0-5%20.5-10%201.3-15a50.7%2050.7%200%200%201%204.8-14.4%2048.2%2048.2%200%200%201%2021-21%2051%2051%200%200%201%2014.4-4.8c5-.8%2010-1.2%2015-1.3a320%20320%200%200%201%207%200l8.2-.1h94.1a320%20320%200%200%201%207%20.1c5%200%2010%20.5%2015%201.3a52%2052%200%200%201%2014.4%204.8%2048.2%2048.2%200%200%201%2021%2021%2050.9%2050.9%200%200%201%204.8%2014.4c.8%205%201.2%2010%201.3%2015a320%20320%200%200%201%20.1%207v102.3l-.1%207c0%205-.5%2010-1.3%2015a50.7%2050.7%200%200%201-4.8%2014.4%2048.2%2048.2%200%200%201-21%2021%2050.8%2050.8%200%200%201-14.4%204.8c-5%20.8-10%201.2-15%201.3a320%20320%200%200%201-7%200l-8.2.1z%22%2F%3E%0A%3C%2Fsvg%3E%0A&quot;);
+                border-radius: 22%;
               "
             >
               <img
                 src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e7/f8/dc/e7f8dca5-9326-58ce-a058-74269c035717/findmy-0-0-1x_U007epad-0-1-sRGB-85-220.png/540x540bb.jpg"
                 alt="探す"
-                style="
-                  width: 100%;
-                  height: 100%;
-                  object-fit: contain;
-                  mask-image: var(--app-icon-mask);
-                  -webkit-mask-image: var(--app-icon-mask);
-                "
+                style="width: 100%; height: 100%; object-fit: contain"
               />
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 230.5 230.5"
-                style="
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                  pointer-events: none;
-                  box-sizing: border-box;
-                "
-              >
-                <path
-                  fill="none"
-                  stroke="#000"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="1.4"
-                  stroke-opacity=".1"
-                  stroke-width="1"
-                  d="M158.2 230H64.1a320 320 0 0 1-7-.1c-5 0-10-.5-15-1.3a50.8 50.8 0 0 1-14.4-4.8 48.2 48.2 0 0 1-21-21 50.9 50.9 0 0 1-4.8-14.4 100.7 100.7 0 0 1-1.3-15v-7l-.1-8.2V64.1a320 320 0 0 1 .1-7c0-5 .5-10 1.3-15a50.7 50.7 0 0 1 4.8-14.4 48.2 48.2 0 0 1 21-21 51 51 0 0 1 14.4-4.8c5-.8 10-1.2 15-1.3a320 320 0 0 1 7 0l8.2-.1h94.1a320 320 0 0 1 7 .1c5 0 10 .5 15 1.3a52 52 0 0 1 14.4 4.8 48.2 48.2 0 0 1 21 21 50.9 50.9 0 0 1 4.8 14.4c.8 5 1.2 10 1.3 15a320 320 0 0 1 .1 7v102.3l-.1 7c0 5-.5 10-1.3 15a50.7 50.7 0 0 1-4.8 14.4 48.2 48.2 0 0 1-21 21 50.8 50.8 0 0 1-14.4 4.8c-5 .8-10 1.2-15 1.3a320 320 0 0 1-7 0l-8.2.1z"
-                  clip-rule="evenodd"
-                  vector-effect="non-scaling-stroke"
-                />
-              </svg>
             </a>
             <div class="app-rating" aria-label="評価4">探す</div>
             <p>
@@ -220,46 +150,14 @@
                 overflow: hidden;
                 display: inline-block;
                 vertical-align: middle;
-                --app-icon-mask: url(&quot;data:image/svg+xml,%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xml%3Aspace%3D%22preserve%22%20viewBox%3D%220%200%20230.5%20230.5%22%3E%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.4%22%20clip-rule%3D%22evenodd%22%20d%3D%22M158.2%20230H64.1a320%20320%200%200%201-7-.1c-5%200-10-.5-15-1.3a50.8%2050.8%200%200%201-14.4-4.8%2048.2%2048.2%200%200%201-21-21%2050.9%2050.9%200%200%201-4.8-14.4%20100.7%20100.7%200%200%201-1.3-15v-7l-.1-8.2V64.1a320%20320%200%200%201%20.1-7c0-5%20.5-10%201.3-15a50.7%2050.7%200%200%201%204.8-14.4%2048.2%2048.2%200%200%201%2021-21%2051%2051%200%200%201%2014.4-4.8c5-.8%2010-1.2%2015-1.3a320%20320%200%200%201%207%200l8.2-.1h94.1a320%20320%200%200%201%207%20.1c5%200%2010%20.5%2015%201.3a52%2052%200%200%201%2014.4%204.8%2048.2%2048.2%200%200%201%2021%2021%2050.9%2050.9%200%200%201%204.8%2014.4c.8%205%201.2%2010%201.3%2015a320%20320%200%200%201%20.1%207v102.3l-.1%207c0%205-.5%2010-1.3%2015a50.7%2050.7%200%200%201-4.8%2014.4%2048.2%2048.2%200%200%201-21%2021%2050.8%2050.8%200%200%201-14.4%204.8c-5%20.8-10%201.2-15%201.3a320%20320%200%200%201-7%200l-8.2.1z%22%2F%3E%0A%3C%2Fsvg%3E%0A&quot;);
+                border-radius: 22%;
               "
             >
               <img
                 src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/50/df/f4/50dff437-3c5c-883f-e16b-d0c596890c22/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/540x540bb.jpg"
                 alt="yukiyama"
-                style="
-                  width: 100%;
-                  height: 100%;
-                  object-fit: contain;
-                  mask-image: var(--app-icon-mask);
-                  -webkit-mask-image: var(--app-icon-mask);
-                "
+                style="width: 100%; height: 100%; object-fit: contain"
               />
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 230.5 230.5"
-                style="
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                  pointer-events: none;
-                  box-sizing: border-box;
-                "
-              >
-                <path
-                  fill="none"
-                  stroke="#000"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="1.4"
-                  stroke-opacity=".1"
-                  stroke-width="1"
-                  d="M158.2 230H64.1a320 320 0 0 1-7-.1c-5 0-10-.5-15-1.3a50.8 50.8 0 0 1-14.4-4.8 48.2 48.2 0 0 1-21-21 50.9 50.9 0 0 1-4.8-14.4 100.7 100.7 0 0 1-1.3-15v-7l-.1-8.2V64.1a320 320 0 0 1 .1-7c0-5 .5-10 1.3-15a50.7 50.7 0 0 1 4.8-14.4 48.2 48.2 0 0 1 21-21 51 51 0 0 1 14.4-4.8c5-.8 10-1.2 15-1.3a320 320 0 0 1 7 0l8.2-.1h94.1a320 320 0 0 1 7 .1c5 0 10 .5 15 1.3a52 52 0 0 1 14.4 4.8 48.2 48.2 0 0 1 21 21 50.9 50.9 0 0 1 4.8 14.4c.8 5 1.2 10 1.3 15a320 320 0 0 1 .1 7v102.3l-.1 7c0 5-.5 10-1.3 15a50.7 50.7 0 0 1-4.8 14.4 48.2 48.2 0 0 1-21 21 50.8 50.8 0 0 1-14.4 4.8c-5 .8-10 1.2-15 1.3a320 320 0 0 1-7 0l-8.2.1z"
-                  clip-rule="evenodd"
-                  vector-effect="non-scaling-stroke"
-                />
-              </svg>
             </a>
             <div class="app-rating" aria-label="評価4">yukiyama</div>
             <p>
@@ -277,62 +175,23 @@
                 overflow: hidden;
                 display: inline-block;
                 vertical-align: middle;
-                --app-icon-mask: url(&quot;data:image/svg+xml,%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xml%3Aspace%3D%22preserve%22%20viewBox%3D%220%200%20230.5%20230.5%22%3E%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.4%22%20clip-rule%3D%22evenodd%22%20d%3D%22M158.2%20230H64.1a320%20320%200%200%201-7-.1c-5%200-10-.5-15-1.3a50.8%2050.8%200%200%201-14.4-4.8%2048.2%2048.2%200%200%201-21-21%2050.9%2050.9%200%200%201-4.8-14.4%20100.7%20100.7%200%200%201-1.3-15v-7l-.1-8.2V64.1a320%20320%200%200%201%20.1-7c0-5%20.5-10%201.3-15a50.7%2050.7%200%200%201%204.8-14.4%2048.2%2048.2%200%200%201%2021-21%2051%2051%200%200%201%2014.4-4.8c5-.8%2010-1.2%2015-1.3a320%20320%200%200%201%207%200l8.2-.1h94.1a320%20320%200%200%201%207%20.1c5%200%2010%20.5%2015%201.3a52%2052%200%200%201%2014.4%204.8%2048.2%2048.2%200%200%201%2021%2021%2050.9%2050.9%200%200%201%204.8%2014.4c.8%205%201.2%2010%201.3%2015a320%20320%200%200%201%20.1%207v102.3l-.1%207c0%205-.5%2010-1.3%2015a50.7%2050.7%200%200%201-4.8%2014.4%2048.2%2048.2%200%200%201-21%2021%2050.8%2050.8%200%200%201-14.4%204.8c-5%20.8-10%201.2-15%201.3a320%20320%200%200%201-7%200l-8.2.1z%22%2F%3E%0A%3C%2Fsvg%3E%0A&quot;);
+                border-radius: 22%;
               "
             >
               <img
                 src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a1/0c/4f/a10c4feb-320f-6d91-ed82-7bc536413da1/AppIcon-release-0-0-1x_U007epad-0-1-0-0-sRGB-GLES2_U002c0-85-220.png/540x540bb.jpg"
                 alt="Slopes：スキー＆スノーボード滑走記録アプリ・公式マップ"
-                style="
-                  width: 100%;
-                  height: 100%;
-                  object-fit: contain;
-                  mask-image: var(--app-icon-mask);
-                  -webkit-mask-image: var(--app-icon-mask);
-                "
+                style="width: 100%; height: 100%; object-fit: contain"
               />
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 230.5 230.5"
-                style="
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                  pointer-events: none;
-                  box-sizing: border-box;
-                "
-              >
-                <path
-                  fill="none"
-                  stroke="#000"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="1.4"
-                  stroke-opacity=".1"
-                  stroke-width="1"
-                  d="M158.2 230H64.1a320 320 0 0 1-7-.1c-5 0-10-.5-15-1.3a50.8 50.8 0 0 1-14.4-4.8 48.2 48.2 0 0 1-21-21 50.9 50.9 0 0 1-4.8-14.4 100.7 100.7 0 0 1-1.3-15v-7l-.1-8.2V64.1a320 320 0 0 1 .1-7c0-5 .5-10 1.3-15a50.7 50.7 0 0 1 4.8-14.4 48.2 48.2 0 0 1 21-21 51 51 0 0 1 14.4-4.8c5-.8 10-1.2 15-1.3a320 320 0 0 1 7 0l8.2-.1h94.1a320 320 0 0 1 7 .1c5 0 10 .5 15 1.3a52 52 0 0 1 14.4 4.8 48.2 48.2 0 0 1 21 21 50.9 50.9 0 0 1 4.8 14.4c.8 5 1.2 10 1.3 15a320 320 0 0 1 .1 7v102.3l-.1 7c0 5-.5 10-1.3 15a50.7 50.7 0 0 1-4.8 14.4 48.2 48.2 0 0 1-21 21 50.8 50.8 0 0 1-14.4 4.8c-5 .8-10 1.2-15 1.3a320 320 0 0 1-7 0l-8.2.1z"
-                  clip-rule="evenodd"
-                  vector-effect="non-scaling-stroke"
-                />
-              </svg>
             </a>
             <div class="app-rating" aria-label="評価4">Slopes</div>
             <p>
               サブスクタイプの記録アプリ。UIが綺麗でオフラインゲレンデマップなどを利用できます。プレミアムは１day　¥500から使用でき、回数券もあったり意外と優しいです。ですが海外アプリなので日本語対応が不十分かもしれません。(2026/07現在)
             </p>
           </article>
-          <!-- ▲アプリカードここまで -->
         </div>
-        <!-- /apps-grid -->
       </section>
-      <!-- /apps -->
 
-      <!-- ------------------------------------------------------------
-       バナーセクション「雪の上は自由、たぶん」
-       左に見出し、右下にリンク一覧という非対称の構成
-       ------------------------------------------------------------ -->
       <section class="banner" id="more">
         <div class="banner-inner">
           <h2>雪の上は自由、たぶん</h2>
@@ -340,7 +199,6 @@
           <div class="banner-links">
             <p class="banner-links-title">もっと詳しく！</p>
             <ul>
-              <!-- 「を見る」の部分だけ見た目を変えたいのでspanで分離している -->
               <li>
                 <a href="#">
                   スキー場内でのマナー
@@ -369,31 +227,25 @@
           </div>
         </div>
       </section>
-      <!-- /banner -->
 
-      <!-- ------------------------------------------------------------
-       装飾的な区切り要素（＼■■■■■■／）
-       意味を持たないただの飾りなのでsectionにせずdivで実装
-       ------------------------------------------------------------ -->
       <div class="section-divider">
         <span class="arrow arrow-left">＼</span>
-        <span class="marks">■■■■■■</span>
+        <span class="marks">SNSで共有しませんか?</span>
         <span class="arrow arrow-right">／</span>
       </div>
 
-      <!-- ------------------------------------------------------------
-       ページ下部のCTA画像バナー（用途未定のプレースホルダー画像）
-       ------------------------------------------------------------ -->
+      <!-- SNS共有ボタン -->
+      <div class="share-buttons">
+        <a href="#" id="shareX" class="share-btn share-x" target="_blank" rel="noopener">Xでシェア</a>
+        <a href="#" id="shareLine" class="share-btn share-line" target="_blank" rel="noopener">LINEでシェア</a>
+        <button type="button" id="shareCopy" class="share-btn share-copy">リンクをコピー</button>
+      </div>
+
       <section class="cta-image">
         <img src="images/cta-banner.png" alt="" />
       </section>
     </main>
-    <!-- /main -->
 
-    <!-- ============================================================
-     フッター
-     ロゴ／ナビ／サイトマップ・プライバシーポリシーの3段構成
-     ============================================================ -->
     <footer class="footer">
       <div class="footer-logo">
         Ski
@@ -411,6 +263,19 @@
         <a href="#">プライバシーポリシー</a>
       </div>
     </footer>
-    <!-- /footer -->
+    <!-- トップに戻るボタン -->
+    <button
+      id="backToTop"
+      class="back-to-top"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      aria-label="ページ最上部へ戻る"
+    >
+      <div class="back-to-top-circle">
+        <span class="back-to-top-arrow"></span>
+      </div>
+    </button>
+
+    <script src="js/menu.js"></script>
+    <script src="js/share.js"></script>
   </body>
 </html>
